@@ -13,7 +13,7 @@ const Profile = () => {
 	}, []);
 
 	const context = useContext(authContext);
-	const { isLoggedin, user, getUser, logout } = context;
+	const { user, getUser, logout } = context;
 
 	const [slots, setSlots] = useState([]);
 	const [date, setDate] = useState([]);
