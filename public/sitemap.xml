@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.shutterpics.in/</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>1.00</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <!-- Photoshoot Services Page -->
+  <url>
+    <loc>https://www.shutterpics.in/shutterpics-gallery</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>0.80</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Videography Services Page -->
+  <url>
+    <loc>https://www.shutterpics.in/shutterpics-online-services</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>0.80</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Music Video Production Page -->
+  <url>
+    <loc>https://www.shutterpics.in/shutterpics-online-booking</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>0.80</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Wedding Photography Page -->
+  <url>
+    <loc>https://www.shutterpics.in/shutterpics-contact</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Event Photography Page -->
+  <url>
+    <loc>https://www.shutterpics.in/shutterpics-about</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Contact Us Page -->
+  <url>
+    <loc>https://www.shutterpics.in/shutterpics-signup</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Partners Page -->
+  <url>
+    <loc>https://www.shutterpics.in/shutterpics-partners</loc>
+    <lastmod>2026-06-13</lastmod>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- About Us Page -->
+  <url>
+    <loc>https://www.shutterpics.in/shutterpics-login</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  
+  <!-- Blog Page (if applicable) -->
+  <!-- <url>
+    <loc>https://www.shutterpics.in/blog</loc>
+    <lastmod>2024-08-17</lastmod>
+    <priority>0.50</priority>
+    <changefreq>weekly</changefreq>
+  </url> -->
+
+  <!-- Additional Pages -->
+  <!-- Add more <url> elements here for other pages as needed -->
+
+</urlset>
