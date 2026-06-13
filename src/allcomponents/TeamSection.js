@@ -9,7 +9,11 @@ import {
 	MdGroups
 } from 'react-icons/md';
 import { HiSparkles } from 'react-icons/hi2';
+import { FaArrowRight } from 'react-icons/fa6';
 import { getInitials } from '../libs/featuredReviews';
+import FadeInUp from '../animations/FadeInUp';
+import StaggerGrid from '../animations/StaggerGrid';
+import ScrollRevealText from '../animations/ScrollRevealText';
 
 const teamData = [
 	{
@@ -67,7 +71,7 @@ const TeamSection = () => {
 			/>
 
 			<div className="relative mx-auto max-w-6xl">
-				<div className="mb-10 flex flex-col items-center text-center md:mb-14">
+				<FadeInUp className="mb-10 flex flex-col items-center text-center md:mb-14">
 					<span className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-purple-800 shadow-sm backdrop-blur-sm">
 						<MdGroups className="text-base" />
 						The People Behind the Lens
@@ -79,12 +83,14 @@ const TeamSection = () => {
 						</span>
 					</h2>
 					<p className="max-w-2xl text-base font-medium leading-relaxed text-gray-600 sm:text-lg">
-						Skilled professionals working together — from shoot day to final delivery — so your
-						story is captured with care.
+						<ScrollRevealText text="Skilled professionals working together — from shoot day to final delivery — so your story is captured with care." />
 					</p>
-				</div>
+				</FadeInUp>
 
-				<div className="mb-10 grid grid-cols-3 gap-4 rounded-2xl border border-white/60 bg-white/60 p-4 shadow-lg shadow-purple-900/5 backdrop-blur-sm ring-1 ring-purple-100 sm:p-6">
+				<StaggerGrid
+					className="mb-10 grid grid-cols-3 gap-4 rounded-2xl border border-white/60 bg-white/60 p-4 shadow-lg shadow-purple-900/5 backdrop-blur-sm ring-1 ring-purple-100 sm:p-6"
+					stagger={0.1}
+				>
 					<div className="text-center">
 						<p className="text-2xl font-bold text-purple-700 sm:text-3xl">5</p>
 						<p className="text-xs font-semibold uppercase tracking-wide text-gray-500 sm:text-sm">
@@ -106,9 +112,9 @@ const TeamSection = () => {
 							Client Focused
 						</p>
 					</div>
-				</div>
+				</StaggerGrid>
 
-				<div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				<StaggerGrid className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.09}>
 					{teamData.map((member) => {
 						const Icon = member.icon;
 						return (
@@ -149,9 +155,9 @@ const TeamSection = () => {
 							</article>
 						);
 					})}
-				</div>
+				</StaggerGrid>
 
-				<div className="mt-12 rounded-2xl border border-purple-200/80 bg-gradient-to-r from-purple-600 to-violet-700 p-6 text-center text-white shadow-xl shadow-purple-900/20 sm:p-8 md:flex md:items-center md:justify-between md:text-left">
+				<FadeInUp delay={0.15} className="mt-12 rounded-2xl border border-purple-200/80 bg-gradient-to-r from-purple-600 to-violet-700 p-6 text-center text-white shadow-xl shadow-purple-900/20 sm:p-8 md:flex md:items-center md:justify-between md:text-left">
 					<div className="md:max-w-xl">
 						<h3 className="text-xl font-bold sm:text-2xl">Ready to work with our team?</h3>
 						<p className="mt-2 text-sm text-purple-100 sm:text-base">
@@ -161,11 +167,12 @@ const TeamSection = () => {
 					</div>
 					<Link
 						to="/shutterpics-online-booking"
-						className="mt-5 inline-flex shrink-0 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-purple-800 transition hover:bg-purple-50 md:mt-0"
+						className="group mt-5 inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-purple-800 transition hover:bg-purple-50 md:mt-0"
 					>
 						Book Your Date
+						<FaArrowRight className="text-xs transition-transform duration-300 group-hover:rotate-[-45deg] group-hover:translate-x-0.5" />
 					</Link>
-				</div>
+				</FadeInUp>
 			</div>
 		</section>
 	);

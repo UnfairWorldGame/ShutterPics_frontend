@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiSolidStar } from 'react-icons/bi';
 import { MdRateReview } from 'react-icons/md';
+import { FaArrowRight } from 'react-icons/fa6';
 import ReviewCard from './ReviewCard';
 import apiList from '../libs/apiList';
 import { featuredReviews, averageRating } from '../libs/featuredReviews';
+import FadeInUp from '../animations/FadeInUp';
+import StaggerGrid from '../animations/StaggerGrid';
+import ScrollRevealText from '../animations/ScrollRevealText';
 
 const normalizeReview = (item) => ({
 	name: item.name,
@@ -50,7 +54,7 @@ const FeedbackSection = ({ limit = 6 }) => {
 			/>
 
 			<div className="relative mx-auto max-w-6xl">
-				<div className="mb-10 flex flex-col items-center text-center md:mb-12">
+				<FadeInUp className="mb-10 flex flex-col items-center text-center md:mb-12">
 					<span className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-purple-800 shadow-sm backdrop-blur-sm">
 						<MdRateReview className="text-base" />
 						Client Stories
@@ -62,12 +66,14 @@ const FeedbackSection = ({ limit = 6 }) => {
 						</span>
 					</h2>
 					<p className="max-w-2xl text-base font-medium leading-relaxed text-gray-600 sm:text-lg">
-						Real feedback from weddings, engagements, birthdays, and corporate events across
-						Uttar Pradesh and beyond.
+						<ScrollRevealText text="Real feedback from weddings, engagements, birthdays, and corporate events across Uttar Pradesh and beyond." />
 					</p>
-				</div>
+				</FadeInUp>
 
-				<div className="mb-10 flex flex-col items-center justify-center gap-4 rounded-2xl border border-white/60 bg-white/70 p-6 shadow-lg shadow-purple-900/5 backdrop-blur-sm ring-1 ring-purple-100 sm:flex-row sm:gap-10 sm:p-8">
+				<StaggerGrid
+					className="mb-10 flex flex-col items-center justify-center gap-4 rounded-2xl border border-white/60 bg-white/70 p-6 shadow-lg shadow-purple-900/5 backdrop-blur-sm ring-1 ring-purple-100 sm:flex-row sm:gap-10 sm:p-8"
+					stagger={0.12}
+				>
 					<div className="text-center">
 						<p className="flex items-center justify-center gap-1 text-4xl font-bold text-purple-700">
 							{avg}
@@ -85,28 +91,30 @@ const FeedbackSection = ({ limit = 6 }) => {
 						<p className="text-4xl font-bold text-purple-700">500+</p>
 						<p className="mt-1 text-sm font-medium text-gray-500">Events covered</p>
 					</div>
-				</div>
+				</StaggerGrid>
 
-				<div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				<StaggerGrid className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
 					{displayed.map((review, idx) => (
 						<ReviewCard key={`${review.name}-${idx}`} review={review} index={idx} />
 					))}
-				</div>
+				</StaggerGrid>
 
-				<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+				<FadeInUp delay={0.1} className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
 					<Link
 						to="/rateus"
-						className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-violet-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-300/30 transition hover:from-purple-700 hover:to-violet-700"
+						className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-violet-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-300/30 transition hover:from-purple-700 hover:to-violet-700"
 					>
 						Read All Reviews &amp; Rate Us
+						<FaArrowRight className="text-xs transition-transform duration-300 group-hover:rotate-[-45deg] group-hover:translate-x-0.5" />
 					</Link>
 					<Link
 						to="/shutterpics-online-booking"
-						className="inline-flex items-center justify-center rounded-full border border-purple-300 bg-white/80 px-8 py-3 text-sm font-semibold text-purple-800 transition hover:bg-white"
+						className="group inline-flex items-center justify-center gap-2 rounded-full border border-purple-300 bg-white/80 px-8 py-3 text-sm font-semibold text-purple-800 transition hover:bg-white"
 					>
 						Book Your Event
+						<FaArrowRight className="text-xs transition-transform duration-300 group-hover:rotate-[-45deg] group-hover:translate-x-0.5" />
 					</Link>
-				</div>
+				</FadeInUp>
 			</div>
 		</section>
 	);

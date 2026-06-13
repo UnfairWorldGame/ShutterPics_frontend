@@ -11,6 +11,7 @@ import Services from './allcomponents/Services';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './libs/ScrollToTop';
+import LenisProvider from './animations/LenisProvider';
 import Login from './allcomponents/Login';
 import AuthState from './context/auth/AuthState';
 import Signup from './allcomponents/Signup';
@@ -24,6 +25,7 @@ function App() {
 	return (
 		<>
 			<AuthState>
+				<LenisProvider>
 				<Router>
 					<div className="flex min-h-screen flex-col">
 					<ScrollToTop />
@@ -61,6 +63,7 @@ function App() {
 					<Footer />
 					</div>
 				</Router>
+				</LenisProvider>
 			</AuthState>
 		</>
 	);
